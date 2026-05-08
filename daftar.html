@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAFTAR AKUN</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+.full-page-gradient {
+    height: 100vh;
+    background: linear-gradient(135deg,#8012ee 0%,#16da47 100%);
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+</style>
+
+<body class="full-page-gradient">
+
+<script>
+    window.alert("HALAMAN DAFTAR AKUN");
+</script>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card p-4">
+                <div class="card-body">
+
+                    <h4 class="text-center mb-4">FORM DAFTAR AKUN</h4>
+
+                    <form onsubmit="register(event)">
+                        
+                        <div class="mb-3">
+                            <label class="form-label">USERNAME</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="username" 
+                                placeholder="Masukan username" 
+                                required
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">PASSWORD</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="password" 
+                                placeholder="Masukan password" 
+                                required
+                            >
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">DAFTAR</button>
+                            <button type="reset" class="btn btn-secondary">RESET</button>
+                        </div>
+
+                    </form>
+
+                    <!-- LINK KEMBALI KE LOGIN -->
+                    <p class="text-center mt-3">
+                        Sudah punya akun? <a href="latihanJS.html">Login di sini</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function register(e) {
+    e.preventDefault();
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    let user = {
+        username: username,
+        password: password
+    };
+
+    // simpan ke localStorage
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Akun berhasil dibuat!");
+
+    // kembali ke login
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
